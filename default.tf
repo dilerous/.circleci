@@ -1,30 +1,5 @@
 # Version 5
 
-resource "aws_s3_bucket" "terraform-state-storage-s3" {
-    bucket = "brad.bucket"
-
-    versioning {
-      enabled = true
-    }
-
-    lifecycle {
-      prevent_destroy = true
-    }
-
-    tags {
-      Name = "S3 Remote Terraform State Store"
-    }
-}
-
-terraform {
- backend = “s3” {
- encrypt = true
- bucket = "brad.bucket"
- region = us-west-2
- key = "${var.bucket_key}"
- }
-}
-
 provider "aws" {
   region = "us-east-1"
   access_key = "${var.access_key}"
