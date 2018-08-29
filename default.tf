@@ -2,8 +2,8 @@
 
 provider "aws" {
   region = "us-east-1"
-  access_key = "$Access"
-  secret_key = "$Secret"
+  access_key = "{$Access}"
+  secret_key = "{$Secret}"
 }
 
 resource "aws_instance" "RadditwithFile" {
