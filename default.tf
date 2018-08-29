@@ -18,7 +18,7 @@ resource "aws_instance" "RadditwithFile" {
       connection {
             type = "ssh"
             user = "ubuntu"
-            private_key = "${file("Default.pem")}"
+            private_key = "${var.default_pem}"
                   }
         }
 
@@ -32,7 +32,7 @@ resource "aws_instance" "RadditwithFile" {
    connection {
        type     = "ssh"
        user     = "ubuntu"
-       private_key = "${file("Default.pem")}"
+       private_key = "${var.default_pem}"
              }
              }
 
