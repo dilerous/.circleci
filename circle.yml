@@ -13,4 +13,3 @@ deployment:
     branch: master
     commands:
       - ./terraform apply terraform.plan
-      - ./terraform remote push
