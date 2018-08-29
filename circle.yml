@@ -1,12 +1,11 @@
 dependencies:
   pre:
-    - wget https://releases.hashicorp.com/terraform/0.6.3/terraform_0.6.3_linux_amd64.zip
-    - unzip terraform_0.6.3_linux_amd64.zip
+    - wget https://releases.hashicorp.com/terraform/0.11.3/terraform_0.11.3_linux_amd64.zip
+    - unzip terraform_0.11.3_linux_amd64.zip
 
 test:
   override:
-    - ./terraform remote config -backend=S3 -backend-config="bucket=$BUCKET" -backend-config="key=terraform.tfstate" -backend-config="region=us-east-1"
-    - ./terraform plan -out=terraform.plan
+    - ./terraform plan -out=terraform.plan -var 'access_key=$ACCESS' -var 'secret_key=$SECRET'
 
 deployment:
   production:
