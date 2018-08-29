@@ -1,14 +1,5 @@
 # Version 5
 
-terraform {
-  backend "s3" {
-    bucket = "brad.bucket"
-    key    = "${var.bucket_key}"
-    region = "us-east-1"
-  }
-}
-
-
 provider "aws" {
   region = "us-east-1"
   access_key = "${var.access_key}"
