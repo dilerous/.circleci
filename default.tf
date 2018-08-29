@@ -47,5 +47,3 @@ provisioner "remote-exec" {
      private_key = "${file("Default.pem")}"
            }
            }
-
-}
