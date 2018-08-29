@@ -17,7 +17,7 @@ resource "aws_s3_bucket" "terraform-state-storage-s3" {
 }
 
 terraform {
- backend “s3” {
+ backend = “s3” {
  encrypt = true
  bucket = "brad.bucket"
  region = us-west-2
