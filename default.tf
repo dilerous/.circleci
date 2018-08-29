@@ -13,3 +13,11 @@ resource "aws_instance" "RadditwithFile" {
   key_name   = "Default"
   security_groups = ["launch-wizard-1"]
 }
+
+terraform {
+  backend "s3" {
+    bucket = "brad.bucket"
+    key    = "${var.bucket_key}"
+    region = "us-east-1"
+  }
+}
