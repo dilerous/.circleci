@@ -10,3 +10,4 @@ resource "aws_instance" "RadditwithFile" {
   count = 1
   key_name   = "Default"
   security_groups = ["launch-wizard-1"]
+}
