@@ -11,29 +11,4 @@ resource "aws_instance" "RadditwithFile" {
   count = 1
   key_name   = "Default"
   security_groups = ["launch-wizard-1"]
-
-  provisioner "file" {
-      source      = "ubuntu.service"
-      destination = "/tmp/ubuntu.service"
-      connection {
-            type = "ssh"
-            user = "ubuntu"
-            private_key = "${var.default_pem}"
-                  }
-        }
-
-
-  provisioner "remote-exec" {
-   inline = [
-     "chmod +x /tmp/configuration.sh",
-     "chmod +x /tmp/ubuntu.service",
-     "sudo /tmp/configuration.sh"
-            ]
-   connection {
-       type     = "ssh"
-       user     = "ubuntu"
-       private_key = "${var.default_pem}"
-             }
-             }
-
 }
